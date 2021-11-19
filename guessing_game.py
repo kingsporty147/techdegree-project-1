@@ -26,10 +26,11 @@ def start_game():
         try:
             magicNumber = int(magicNumber)
 
-            if magicNumber > randNumberEnd:
+            if magicNumber > randNumberEnd or magicNumber < randNumberStart:
                 raise ValueError(
                     "Please try again with number between {} and {}".format(
                         randNumberStart, randNumberEnd))
+                
 
             if magicNumber > answer:
                 raise ValueError("It's lower")
