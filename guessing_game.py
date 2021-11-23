@@ -10,10 +10,9 @@ def start_game():
     answer = random.randint(randNumberStart, randNumberEnd)
     highScore = 0
 
-    print('Number Guessing Game')
+    print("Number Guessing Game")
 
-    playerName = raw_input('What is your name?  ')
-
+    playerName = input("What is your name?  ")
 
     print("Welcome to Number Guessing Game, {}".format(playerName))
 
@@ -21,7 +20,7 @@ def start_game():
         counter += 1
 
         print("Current high score: {}".format(highScore))
-        magicNumber = raw_input("Guess the magic number from 1-10?  ")
+        magicNumber = input("Guess the magic number from 1-10?  ")
 
         try:
             magicNumber = int(magicNumber)
@@ -29,8 +28,9 @@ def start_game():
             if magicNumber > randNumberEnd or magicNumber < randNumberStart:
                 raise ValueError(
                     "Please try again with number between {} and {}".format(
-                        randNumberStart, randNumberEnd))
-                
+                        randNumberStart, randNumberEnd
+                    )
+                )
 
             if magicNumber > answer:
                 raise ValueError("It's lower")
@@ -45,7 +45,7 @@ def start_game():
                 print("Got it, it took you {} attempts ".format(counter))
                 print("Game Over")
 
-                checkIfplayAgain = raw_input("Do you want to play again?  ")
+                checkIfplayAgain = input("Do you want to play again?  ")
 
                 if checkIfplayAgain == "y":
 
